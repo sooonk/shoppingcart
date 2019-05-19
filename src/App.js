@@ -11,19 +11,32 @@ export const formatPrice = (price) => {
 
 
 class App extends Component {
-
-componentDidMount(){
-  this.props.fetchProducts();
-};
+  state = {
+    value: '',
+  }
+  componentDidMount() {
+    this.props.fetchProducts();
+  };
   render() {
     return (
       <div className="App">
         <TopBar />
         <h1>Shopping Cart</h1>
-        {this.props.loading ? "Loading" : (
+        <div>
+          <input type='text' placeholder='Search' onChange={(event) => {
+              this.setState({
+                value: event.target.value
+              })
+            }} />
+        </div>
+        {this.props.loading ? "Loading" : (//w przypadku ładowania wyświetla się loading, po załadowaniu wyświetlanie listy
           <div className='itemList'>
             <ul>
-              {this.props.items.map(product =>
+              {this.props.items
+              .filter((item)=>{
+                return item.name.toLowerCase().search(this.state.value) !== -1
+              })
+              .map(product =>
                 <li key={product.id}>
                   <p>{product.name}</p>
                   <p><img src={product.image}></img></p>
