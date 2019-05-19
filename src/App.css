@@ -31,3 +31,48 @@
     transform: rotate(360deg);
   }
 }
+.itemList{
+  display: inline-block;
+}
+.itemImg, .itemAmount {
+  padding: 20px;
+  margin: 20px;
+  font-size: 20px;
+}
+.itemImg{
+  float: left;
+}
+.itemAmount{
+  float: right;
+  color: antiquewhite;
+  text-decoration: none;
+
+}
+Link:visited{
+  color: antiquewhite;
+}
+
+.topBar {
+  text-align: center;
+  display: inline-block;
+  background-color: #282c34;
+  color: antiquewhite;
+  width: 100%
+}
+li{
+  list-style-type: none;
+  list-style-position: inside;
+  
+}
+img{
+  height: 50px;
+}
+
+.cart{
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid black;
+  margin: 1rem;
+
+}
